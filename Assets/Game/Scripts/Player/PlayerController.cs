@@ -83,6 +83,8 @@ public class PlayerController : MonoBehaviour
 	InputAction attackAction;
 	/// <summary>Input action for pausing the game</summary>
 	InputAction pauseAction;
+	/// <summary>Input action for switching inventory items</summary>
+	InputAction nextAction;
 
 	// Current state variables
 	/// <summary>
@@ -135,6 +137,7 @@ public class PlayerController : MonoBehaviour
 		sprintAction = InputSystem.actions.FindAction("Sprint");
 		attackAction = InputSystem.actions.FindAction("Attack");
 		pauseAction = InputSystem.actions.FindAction("Pause");
+		nextAction = InputSystem.actions.FindAction("Next");
 	}
 
 	/// <summary>
@@ -159,12 +162,16 @@ public class PlayerController : MonoBehaviour
 		pauseAction.performed += OnPause;
 		pauseAction.canceled += OnPause;
 
+		nextAction.performed += OnNext;
+		nextAction.canceled += OnNext;
+
 		// Enable actions if needed
 		moveAction.Enable();
 		jumpAction.Enable();
 		sprintAction.Enable();
 		attackAction.Enable();
 		pauseAction.Enable();
+		nextAction.Enable();
 	}
 
 	/// <summary>
@@ -189,12 +196,16 @@ public class PlayerController : MonoBehaviour
 		pauseAction.performed -= OnPause;
 		pauseAction.canceled -= OnPause;
 
+		nextAction.performed -= OnNext;
+		nextAction.canceled -= OnNext;
+
 		// Disable actions if needed
 		moveAction.Disable();
 		jumpAction.Disable();
 		sprintAction.Disable();
 		attackAction.Disable();
 		pauseAction.Disable();
+		nextAction.Disable();
 	}
 
 	/// <summary>
@@ -327,6 +338,20 @@ public class PlayerController : MonoBehaviour
 		{
 			pauseData.Value = !pauseData.Value;
 			onPauseEvent.RaiseEvent();
+		}
+	}
+
+	/// <summary>
+	/// Callback for the next input action.
+	/// Sets the inventory to the next item.
+	/// </summary>
+	/// <param name="ctx">Input action context</param>
+	public void OnNext(InputAction.CallbackContext ctx)
+	{
+		print("next");
+		if (ctx.phase == InputActionPhase.Performed)
+		{			
+			GetComponent<Inventory>()?.NextItem();
 		}
 	}
 

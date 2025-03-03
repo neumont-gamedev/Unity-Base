@@ -19,5 +19,5 @@ MonoBehaviour:
   decelerationInAir: 4
   jumpHeight: 2
   gravity: -9.8
-  turnRate: 1
+  turnRate: 20
   pushForce: 5
