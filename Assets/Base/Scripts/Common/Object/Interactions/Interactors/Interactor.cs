@@ -74,7 +74,7 @@ public struct DamageInfo
 	/// <summary>
 	/// Categorizes the type of damage being inflicted.
 	/// </summary>
-	public enum DamageType { Physical, Fire, Fall, Zone }
+	public enum DamageType { Physical, Ammo, Fire, Fall, Zone }
 
 	/// <summary>
 	/// Information about the entity that inflicted the damage.
