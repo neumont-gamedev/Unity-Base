@@ -98,7 +98,7 @@ public class Destructable : MonoBehaviour, IDamageable
 		health = Mathf.Clamp(health, 0, maxHealth);
 
 		// Spawn damage effect if one is set
-		if (damageFxPrefab != null) Instantiate(damageFxPrefab, damage.hitPoint, Quaternion.identity);
+		if (damageFxPrefab != null) Instantiate(damageFxPrefab, damage.collisionInfo.hitPoint, Quaternion.identity);
 
 		// Check if health is depleted
 		if (health <= 0)

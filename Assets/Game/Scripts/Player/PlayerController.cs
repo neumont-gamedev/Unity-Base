@@ -324,7 +324,9 @@ public class PlayerController : MonoBehaviour
 		// Prevent attacking when clicking on UI elements
 		//if (EventSystem.current.IsPointerOverGameObject()) return;
 
-		if (ctx.phase == InputActionPhase.Performed && animator != null) animator.SetTrigger("Attack");
+		//if (ctx.phase == InputActionPhase.Performed && animator != null) animator.SetTrigger("Attack");
+		if (ctx.phase == InputActionPhase.Performed) GetComponent<Inventory>()?.Use();
+		else if (ctx.phase == InputActionPhase.Canceled) GetComponent<Inventory>()?.StopUse();
 	}
 
 	/// <summary>

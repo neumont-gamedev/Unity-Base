@@ -4,10 +4,6 @@ using UnityEngine;
 /// Handles physics-based interactions with objects implementing the IInteractable interface.
 /// Detects both trigger and collision events and forwards them to appropriate interaction methods.
 /// </summary>
-/// <summary>
-/// Handles physics-based interactions with objects implementing the IInteractable interface.
-/// Detects both trigger and collision events and forwards them to appropriate interaction methods.
-/// </summary>
 public class CollisionInteractor : Interactor
 {
 	/// <summary>
@@ -175,14 +171,27 @@ public class CollisionInteractor : Interactor
 	/// <returns>A filled InteractorInfo structure with collision data</returns>
 	protected virtual InteractorInfo CreateCollisionInteractorInfo(Collision collision)
 	{
-		var contactPoint = collision.GetContact(0);
-
 		var info = CreateBaseInteractorInfo();
-		info.hitPoint = contactPoint.point;
-		info.hitNormal = contactPoint.normal;
-		info.hitDirection = -contactPoint.normal; // Direction is opposite of normal
-		info.collisionVelocity = collision.relativeVelocity;
+		/*
+		// Check if we have any contact points
+		if (collision.contactCount > 0)
+		{
+			var contactPoint = collision.contacts[0];
+			info.hitPoint = contactPoint.point;
+			info.hitNormal = contactPoint.normal;
+			info.hitDirection = -contactPoint.normal; // Direction is opposite of normal
+		}
+		else
+		{
+			// Fallback values if no contact points are available
+			info.hitPoint = collision.transform.position;
+			info.hitNormal = Vector3.up;
+			info.hitDirection = Vector3.down;
+			Debug.LogWarning("Collision occurred with no contact points");
+		}
 
+		info.collisionVelocity = collision.relativeVelocity;
+		*/
 		return info;
 	}
 
@@ -213,8 +222,8 @@ public class CollisionInteractor : Interactor
 			otherPoint = other.transform.position;
 		}
 
-		info.hitPoint = otherPoint;
-		info.hitDirection = (otherPoint - thisPoint).normalized;
+		//info.hitPoint = otherPoint;
+		//info.hitDirection = (otherPoint - thisPoint).normalized;
 
 		return info;
 	}

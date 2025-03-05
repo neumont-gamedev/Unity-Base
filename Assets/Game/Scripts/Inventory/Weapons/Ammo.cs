@@ -2,16 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Ammo : MonoBehaviour, IInteractable
+public abstract class Ammo : CollisionEventReceiver
 {
 	[SerializeField] protected AmmoData ammoData;
-
-	public void OnInteractStart(InteractorInfo info)
+	
+	public void OnCollisionStart(CollisionInfo info)
 	{
+		if ((ammoData.hitLayerMask & (1 << info.gameObject.layer)) == 0) return;
+
 		// apply damage if game object is damagable
 		if (!ammoData.damageOverTime && info.gameObject.TryGetComponent<IDamageable>(out IDamageable damagable))
 		{
-			damagable.ApplyDamage(info.CreateDamageInfo(ammoData.damage, DamageInfo.DamageType.Ammo));
+			DamageInfo damageInfo = new DamageInfo
+			{
+				inflictor = gameObject,
+				amount = ammoData.damage,
+				type = DamageInfo.DamageType.Ammo,
+				collisionInfo = info
+			};
+			damagable.ApplyDamage(damageInfo);
 		}
 
 		// create impact prefab
@@ -27,16 +36,25 @@ public abstract class Ammo : MonoBehaviour, IInteractable
 		}
 	}
 
-	public void OnInteractActive(InteractorInfo info)
+	public void OnCollisionActive(CollisionInfo info)
 	{
+		if ((ammoData.hitLayerMask & (1 << info.gameObject.layer)) == 0) return;
+
 		// apply damage if game object is damagable
 		if (ammoData.damageOverTime && gameObject.TryGetComponent<IDamageable>(out IDamageable damagable))
 		{
-			damagable.ApplyDamage(info.CreateDamageInfo(ammoData.damage * Time.deltaTime, DamageInfo.DamageType.Ammo));
+			DamageInfo damageInfo = new DamageInfo
+			{
+				inflictor = gameObject,
+				amount = ammoData.damage,
+				type = DamageInfo.DamageType.Ammo,
+				collisionInfo = info
+			};
+			damagable.ApplyDamage(damageInfo);
 		}
 	}
 
-	public void OnInteractEnd(InteractorInfo info)
+	public void OnCollisionEnd(InteractorInfo info)
 	{
 		//
 	}

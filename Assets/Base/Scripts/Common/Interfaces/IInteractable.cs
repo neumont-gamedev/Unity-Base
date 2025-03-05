@@ -19,7 +19,7 @@ public interface IInteractable
 	/// Default implementation logs the start of interaction.
 	/// </summary>
 	/// <param name="info">Information about the interacting entity</param>
-	void OnInteractStart(InteractorInfo info) => Debug.Log($"Interaction started with {info.gameObject.name} at {info.hitPoint}");
+	void OnInteractStart(InteractorInfo info) => Debug.Log($"Interaction started with {info.gameObject.name}");
 
 	/// <summary>
 	/// Called while interaction is ongoing.

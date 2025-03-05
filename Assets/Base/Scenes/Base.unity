@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 136259228}
   - component: {fileID: 136259232}
+  - component: {fileID: 136259233}
   - component: {fileID: 136259231}
   - component: {fileID: 136259230}
   - component: {fileID: 136259229}
@@ -257,6 +258,24 @@ MonoBehaviour:
   onPlayerDeathEvent: {fileID: 11400000, guid: 726750ba3073ae9448f2d9ff8491773f, type: 2}
   onGameStartEvent: {fileID: 11400000, guid: cce1a0f2a2f6581459877465886b3efd, type: 2}
   onSceneReadyEvent: {fileID: 11400000, guid: d313837e315795e44b64847a0311da79, type: 2}
+--- !u!114 &136259233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136259226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 400c11e6de2aebb41b4c862dc2eda844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 0}
+  masterVolume: {fileID: 11400000, guid: 31bf7806a3b7d57478f30e6590cf6868, type: 2}
+  sfxVolume: {fileID: 11400000, guid: 73c0eb2847c3a4f4f8e24443a8b509aa, type: 2}
+  musicVolume: {fileID: 11400000, guid: c23d9132263d3fc4d979a1d97faec85f, type: 2}
+  onAudioChange: {fileID: 11400000, guid: 4e3c784863fa2a54eba2cf52fe88b29c, type: 2}
+  onPlayAudioCueEvent: {fileID: 11400000, guid: d675354efca2a8a4fb74299113438414, type: 2}
 --- !u!1 &168107546
 GameObject:
   m_ObjectHideFlags: 0
