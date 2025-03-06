@@ -114,9 +114,9 @@ public class AudioConfigurationData : ScriptableObject
 		// Apply volume and pitch settings with randomization
 		audioSource.priority = (int)this.priority;
 		audioSource.volume = this.volume + (Random.Range(-this.volumeRandom, this.volumeRandom));
-		audioSource.pitch = this.pitch + (Random.Range(-this.pitchRandom, this.pitchRandom));
+		audioSource.pitch = AudioManager.SemitonesToPitch(this.pitch + (Random.Range(-this.pitchRandom, this.pitchRandom)));
 
-		// Apply spatial settings
+		//// Apply spatial settings
 		audioSource.spatialBlend = this.spatialBlend;
 		audioSource.rolloffMode = this.rolloffMode;
 		audioSource.minDistance = this.minDistance;

@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400c11e6de2aebb41b4c862dc2eda844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 33fa366cc0245794798fe2f91400d95e, type: 2}
   masterVolume: {fileID: 11400000, guid: 31bf7806a3b7d57478f30e6590cf6868, type: 2}
   sfxVolume: {fileID: 11400000, guid: 73c0eb2847c3a4f4f8e24443a8b509aa, type: 2}
   musicVolume: {fileID: 11400000, guid: c23d9132263d3fc4d979a1d97faec85f, type: 2}

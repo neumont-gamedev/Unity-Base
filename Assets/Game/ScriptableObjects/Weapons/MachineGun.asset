@@ -17,10 +17,10 @@ MonoBehaviour:
   description: 
   icon: {fileID: 0}
   itemType: 1
-  allowMultiple: 0
+  allowMultiple: 1
   maxStackSize: 1
   equipable: 0
-  usageType: 0
+  usageType: 1
   animTriggerName: 
   animEquipName: 
   rigLayerWeight: []
@@ -29,6 +29,6 @@ MonoBehaviour:
   fireRate: 0.05
   spread: {x: 0.1, y: 0.1, z: 0.1}
   rounds: 0
-  ammoPrefab: {fileID: 8684975148597009272, guid: 25c5fd2415e57f94292a229e2d21b2c3, type: 3}
+  ammoPrefab: {fileID: 6198882224689759567, guid: 6a0d3bf20a85add4ea9848fbb07d13ea, type: 3}
   activeSound: {fileID: 0}
   reloadSound: {fileID: 0}

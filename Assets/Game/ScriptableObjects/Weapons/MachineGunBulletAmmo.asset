@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2f688a13ee1feb49bef08af0d71201a, type: 3}
-  m_Name: PistolBulletAmmo
+  m_Name: MachineGunBulletAmmo
   m_EditorClassIdentifier: 
   ammoType: 0
   lifetime: 3
@@ -18,11 +18,11 @@ MonoBehaviour:
   damage: 10
   damageOverTime: 0
   destroyOnImpact: 1
-  impactPrefab: {fileID: 1384676760634654, guid: 289ba3245c9c98c42aeb93d5f45a2248, type: 3}
+  impactPrefab: {fileID: 1829163952570794, guid: f171ac3dbb620c44e81cd88ddee1cbbd, type: 3}
   aoeData: {fileID: 0}
   hitLayerMask:
     serializedVersion: 2
-    m_Bits: 245
+    m_Bits: 4294967295
   force: 40
   forceMode: 2
   hasGravity: 0

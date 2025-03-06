@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6909323122180604012}
   - component: {fileID: 3400380480442402454}
   - component: {fileID: 1633550457470324321}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BasicPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -334,13 +334,37 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1350008796505687350, guid: be534ad1a37d0e74596bf31dbad7a9f0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034375280861668609, guid: be534ad1a37d0e74596bf31dbad7a9f0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2924614180890645895, guid: be534ad1a37d0e74596bf31dbad7a9f0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974749511485056180, guid: be534ad1a37d0e74596bf31dbad7a9f0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4717134510773523812, guid: be534ad1a37d0e74596bf31dbad7a9f0, type: 3}
       propertyPath: m_Name
       value: Pistol
       objectReference: {fileID: 0}
     - target: {fileID: 4717134510773523812, guid: be534ad1a37d0e74596bf31dbad7a9f0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717134510773523812, guid: be534ad1a37d0e74596bf31dbad7a9f0, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8277690864857642929, guid: be534ad1a37d0e74596bf31dbad7a9f0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -376,8 +400,16 @@ PrefabInstance:
       value: MachineGun
       objectReference: {fileID: 0}
     - target: {fileID: 1653505447444991348, guid: 04f0e8529be4d29458c80ab1857bbc85, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653505447444991348, guid: 04f0e8529be4d29458c80ab1857bbc85, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170684447251187352, guid: 04f0e8529be4d29458c80ab1857bbc85, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3034526629589567250, guid: 04f0e8529be4d29458c80ab1857bbc85, type: 3}
       propertyPath: m_LocalPosition.x
@@ -418,6 +450,34 @@ PrefabInstance:
     - target: {fileID: 3034526629589567250, guid: 04f0e8529be4d29458c80ab1857bbc85, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764314422979873397, guid: 04f0e8529be4d29458c80ab1857bbc85, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118479261171521056, guid: 04f0e8529be4d29458c80ab1857bbc85, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719567975549999710, guid: 04f0e8529be4d29458c80ab1857bbc85, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891118491189577516, guid: 04f0e8529be4d29458c80ab1857bbc85, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642272235388553848, guid: 04f0e8529be4d29458c80ab1857bbc85, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812057422365339278, guid: 04f0e8529be4d29458c80ab1857bbc85, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8741481118944695532, guid: 04f0e8529be4d29458c80ab1857bbc85, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

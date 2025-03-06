@@ -20,9 +20,9 @@ public class AudioManager : Singleton<AudioManager>
 	private List<AudioEmitter> audioEmitters = new List<AudioEmitter>();
 
 	// Constants for storing volume settings in PlayerPrefs.
-	const string MASTER_VOLUME = "Master_Volume";
-	const string SFX_VOLUME = "SFX_Volume";
-	const string MUSIC_VOLUME = "Music_Volume";
+	const string MASTER_VOLUME = "MasterVolume";
+	const string SFX_VOLUME = "SFXVolume";
+	const string MUSIC_VOLUME = "MusicVolume";
 
 	void Start()
 	{
@@ -31,10 +31,10 @@ public class AudioManager : Singleton<AudioManager>
 
 		onPlayAudioCueEvent.OnAudioCuePlay += OnPlayAudioCue;
 
-		// Loads saved volume settings from PlayerPrefs or defaults to 0.
-		masterVolume.Value = PlayerPrefs.GetFloat(MASTER_VOLUME, 0);
-		sfxVolume.Value = PlayerPrefs.GetFloat(SFX_VOLUME, 0);
-		musicVolume.Value = PlayerPrefs.GetFloat(MUSIC_VOLUME, 0);
+		// Loads saved volume settings from PlayerPrefs or defaults to 1.
+		masterVolume.Value = PlayerPrefs.GetFloat(MASTER_VOLUME, 1);
+		sfxVolume.Value = PlayerPrefs.GetFloat(SFX_VOLUME, 1);
+		musicVolume.Value = PlayerPrefs.GetFloat(MUSIC_VOLUME, 1);
 
 		// Applies the loaded volume settings to the respective audio groups.
 		SetGroupVolume(MASTER_VOLUME, masterVolume);
@@ -115,5 +115,31 @@ public class AudioManager : Singleton<AudioManager>
 	public static float DBToLinear(float dB)
 	{
 		return Mathf.Pow(10.0f, dB / 20.0f);
+	}
+
+	/// <summary>
+	/// Converts semitones to Unity's pitch value
+	/// </summary>
+	/// <param name="semitones">Number of semitones (positive or negative)</param>
+	/// <returns>Unity pitch value where 1.0 is the original pitch</returns>
+	public static float SemitonesToPitch(float semitones)
+	{
+		// The formula is 2^(semitones/12)
+		// Each octave (12 semitones) doubles the frequency
+		// Each semitone is the 12th root of 2 (~1.059) times the previous semitone
+		return Mathf.Pow(2f, semitones / 12f);
+	}
+
+	/// <summary>
+	/// Converts Unity's pitch value to semitones
+	/// </summary>
+	/// <param name="pitch">Unity pitch value (typically between 0.5 and 3.0)</param>
+	/// <returns>Number of semitones relative to the original pitch</returns>
+	public static float PitchToSemitones(float pitch)
+	{
+		// The formula is 12 * log2(pitch)
+		// This is the inverse of the SemitonesToPitch function
+		// Note: Log(value, 2f) is logarithm with base 2
+		return 12f * Mathf.Log(pitch, 2f);
 	}
 }

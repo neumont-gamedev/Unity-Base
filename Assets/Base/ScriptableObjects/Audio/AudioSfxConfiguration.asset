@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   priority: 128
-  audioMixerGroup: {fileID: 0}
+  audioMixerGroup: {fileID: 5829093623457939492, guid: 33fa366cc0245794798fe2f91400d95e, type: 2}
   volume: 1
   volumeRandom: 0
   pitch: 0

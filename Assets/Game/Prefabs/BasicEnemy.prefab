@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3014205481027535501}
   - component: {fileID: 6583670409936209083}
+  - component: {fileID: -4184352811532415106}
   - component: {fileID: 3168634549323629901}
   - component: {fileID: 3149244044663873364}
   - component: {fileID: 1201989202650362106}
   - component: {fileID: 4471864085793896155}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BasicEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,6 +50,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints: []
+--- !u!114 &-4184352811532415106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068099976090011070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45289745e39ece244b6c39fb7a835e52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  maxHealth: 100
+  damageFxPrefab: {fileID: 0}
+  destroyFxPrefab: {fileID: 0}
+  destroyOnDeath: 1
+  destroyTimer: 0
+  onDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  onDestroyed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!33 &3168634549323629901
 MeshFilter:
   m_ObjectHideFlags: 0
